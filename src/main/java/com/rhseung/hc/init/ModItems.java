@@ -14,10 +14,11 @@ public class ModItems {
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
     public static void registerAll(RegistryEvent.Register<Item> event) {
-        // Blocks
+        if (!event.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
 
         // Items
+
     }
 
     private static <T extends Item> T register(String name, T item) {
