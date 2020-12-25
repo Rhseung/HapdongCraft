@@ -18,7 +18,7 @@ public class Registration {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
 
-        ModItems.register();
-        ModBlocks.register();
+        //ModItems.registerAll();
+        //ModBlocks.register();
     }
 }
