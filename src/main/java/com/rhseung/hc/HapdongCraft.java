@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 public class HapdongCraft {
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "hc";
+    public static HapdongCraft instance;
 
     public HapdongCraft() {
         Registration.register();
@@ -33,9 +34,10 @@ public class HapdongCraft {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(ModBlocks::registerAll);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
+        //FMLJavaModLoadingContext.get().getModEventBus().addListener(ModBlocks::registerAll);
+        //FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
 
+        instance = this;
         MinecraftForge.EVENT_BUS.register(this);
     }
 

@@ -15,14 +15,15 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = HapdongCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@ObjectHolder(HapdongCraft.MOD_ID)
 public class ModItems {
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
-    @ObjectHolder(HapdongCraft.MOD_ID)
-    public static Item test;
+    public static final Item test = null;
 
     @SubscribeEvent
     public static void registerAll(RegistryEvent.Register<Item> event) {
+        //if (!event.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
 
         for (Metal metal: Metal.values()) {
