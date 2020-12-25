@@ -2,6 +2,7 @@ package com.rhseung.hc;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,10 +19,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-@Mod("hc")
+@Mod(HapdongCraft.MOD_ID)
 public class HapdongCraft
 {
     private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MOD_ID = "hc";
 
     public HapdongCraft() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -30,6 +32,10 @@ public class HapdongCraft
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public static ResourceLocation getId(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 
     private void setup(final FMLCommonSetupEvent event)
