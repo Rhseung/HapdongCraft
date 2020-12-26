@@ -23,10 +23,9 @@ public class ModItems {
 
     @SubscribeEvent
     public static void registerAll(RegistryEvent.Register<Item> event) {
-        //if (!event.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
 
-        for (Metal metal: Metal.values()) {
+        for (Metal metal : Metal.values()) {
             register(metal.getName() + "_ingot", metal.getIngot());
         }
     }
@@ -37,6 +36,4 @@ public class ModItems {
         ForgeRegistries.ITEMS.register(item);
         return item;
     }
-
-    //public static void register() {}
 }
