@@ -34,8 +34,6 @@ public class HapdongCraft {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-        //FMLJavaModLoadingContext.get().getModEventBus().addListener(ModBlocks::registerAll);
-        //FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
 
         instance = this;
         MinecraftForge.EVENT_BUS.register(this);
